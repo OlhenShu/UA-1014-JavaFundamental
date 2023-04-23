@@ -53,18 +53,6 @@ class Calls {
         return format(price);
     }
 
-
-//    public String getPrice(String country, int duration) {
-//        int costPerMinute = tariffs.get(country);
-//        int minutes = duration / 60;
-//        int seconds = duration % 60;
-//        int price = (minutes * costPerMinute) + ((seconds * costPerMinute) / 60); //price in kopecks
-//        total += price;
-//
-//        return format(price);
-//    }
-
-
     public String getTotal() {
         return format(total);
     }
