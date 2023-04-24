@@ -13,15 +13,15 @@ public class Circle {
         System.out.println("Enter the radius of the circle:");
         double radius = scanner.nextDouble();
 
-        System.out.println("Area of the circle is " + area(radius));
-        System.out.println("Perimeter of the circle is " + perimeter(radius));
+        System.out.printf("Area of the circle is %.2f%n", area(radius));
+        System.out.printf("Perimeter of the circle is %.2f%n", perimeter(radius));
     }
 
-    private static double area(double r) {
-        return Math.PI * Math.pow(r, 2);
+    private static double area(double radius) {
+        return Math.PI * Math.pow(radius, 2);
     }
 
-    private static double perimeter(double r) {
-        return 2 * Math.PI * r;
+    private static double perimeter(double radius) {
+        return 2 * Math.PI * radius;
     }
 }

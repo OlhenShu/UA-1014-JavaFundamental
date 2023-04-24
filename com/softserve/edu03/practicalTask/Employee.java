@@ -13,8 +13,8 @@ public class Employee {
         Employee employeeSecond = new Employee("Maxim", 25, 180);
         Employee employeeThird = new Employee("Evgenii", 7.4, 154.5);
 
-        System.out.println("Employees:" + "\n" + employeeFirst + "\n" + employeeSecond + "\n" + employeeThird);
-        System.out.println("Total sum: " + Employee.getTotal());
+        System.out.printf("Employees: \n%s\n%s\n%s\n", employeeFirst, employeeSecond, employeeThird);
+        System.out.printf("Total sum: %s", Employee.getTotal());
     }
 
     public Employee() {
@@ -33,6 +33,8 @@ public class Employee {
 
         System.out.print("Input hours: ");
         this.hours = scanner.nextDouble();
+
+        scanner.close();
 
         setTotal();
     }
@@ -59,7 +61,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Name: " + name + ", Rate: " + rate + ", Hours: " + hours + ", Salary: " + getSalary() + ", Bonuses: " + getBonuses();
+        return String.format("Name: %s, Rate: %.2f, Hours: %.2f, Salary: %.2f, Bonuses: %.2f", name, rate, hours, getSalary(), getBonuses());
     }
 
     private double getBonuses() {

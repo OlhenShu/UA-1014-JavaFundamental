@@ -15,6 +15,9 @@ public class ReverseOrderInt {
         System.out.println("Input third number: ");
         int third = scanner.nextInt();
 
-        System.out.println("Average is " + (float) (first + second + third) / 3);
+        scanner.close();
+
+        float average = (float) (first + second + third) / 3;
+        System.out.printf("Average is %f", average);
     }
 }

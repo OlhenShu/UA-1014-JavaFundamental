@@ -9,6 +9,8 @@ public class Calculate {
         int a = scanner.nextInt();
         int b = scanner.nextInt();
 
+        scanner.close();
+
         System.out.println(a + b);
         System.out.println(a - b);
         System.out.println(a * b);

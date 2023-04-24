@@ -9,6 +9,8 @@ public class Dialog {
         System.out.println("How are you?");
         String answer = scanner.nextLine();
 
-        System.out.println("Your are " + answer);
+        scanner.close();
+
+        System.out.printf("Your are %s", answer);
     }
 }

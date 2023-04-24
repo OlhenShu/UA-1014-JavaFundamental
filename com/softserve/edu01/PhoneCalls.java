@@ -23,20 +23,24 @@ public class PhoneCalls extends Calls {
         int durationCallUSA = scanner.nextInt();
 
         Calls calls = new Calls();
-        System.out.println("The cost of your call to Ukraine: " + calls.getPrice("Ukraine", durationCallUkraine));
-        System.out.println("The cost of your call to Mexico: " + calls.getPrice("Mexico", durationCallMexico));
-        System.out.println("The cost of your call to USA: " + calls.getPrice("USA", durationCallUSA));
-        System.out.println("The total cost of all calls: " + calls.getTotal());
+        System.out.printf("The cost of your call to Ukraine: %s\n", calls.getPrice("Ukraine", durationCallUkraine));
+        System.out.printf("The cost of your call to Mexico: %s\n", calls.getPrice("Mexico", durationCallMexico));
+        System.out.printf("The cost of your call to USA: %s\n", calls.getPrice("USA", durationCallUSA));
+        System.out.printf("The total cost of all calls: %s\n", calls.getTotal());
+
+        scanner.close();
     }
 }
 
 class Calls {
-    private Scanner scanner = new Scanner(System.in);
     private double total = 0;
-    private HashMap<String, Double> tariffs = new HashMap<>();
+    private final HashMap<String, Double> tariffs = new HashMap<>();
 
     public Calls() {
         System.out.println("Cost per minute to Ukraine (Format double)");
+
+        Scanner scanner = new Scanner(System.in);
+
         tariffs.put("Ukraine", scanner.nextDouble());
 
         System.out.println("Cost per minute to Mexico (Format double)");
@@ -44,6 +48,8 @@ class Calls {
 
         System.out.println("Cost per minute to USA (Format double)");
         tariffs.put("USA", scanner.nextDouble());
+
+        scanner.close();
     }
 
     public String getPrice(String country, int duration) {

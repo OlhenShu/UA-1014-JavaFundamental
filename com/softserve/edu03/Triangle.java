@@ -23,7 +23,9 @@ public class Triangle {
         System.out.print("Input side 3: ");
         this.sideC = scanner.nextDouble();
 
-        System.out.println("Area of triangle: " + calculateArea());
+        scanner.close();
+
+        System.out.printf("Area of triangle: %.2f%n", calculateArea());
     }
 
     public double calculateArea() {

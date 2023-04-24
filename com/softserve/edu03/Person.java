@@ -13,7 +13,7 @@ public class Person {
         Person[] people = new Person[countPersons];
 
         for (int i = 0; i < countPersons; i++) {
-            System.out.println("Enter information about person " + (i + 1) + ":");
+            System.out.printf("Enter information about person %d:\n", (i + 1));
 
             Person person = new Person();
             person.input();
@@ -74,7 +74,7 @@ public class Person {
     }
 
     private void output() {
-        System.out.println("Name: " + getFirstName() + " " + getLastName() + ", Birth year: " + getBirthYear() + ", Age: " + getAge());
+        System.out.printf("Name: %s %s, Birth year: %d, Age: %d\n", getFirstName(), getLastName(), getBirthYear(), getAge());
     }
 
     private void changeName(String firstName, String lastName) {
