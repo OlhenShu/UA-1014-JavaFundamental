@@ -1,14 +1,6 @@
 package lessonThree;
 
 public class Employee {
-    public static void main(String[] args) {
-
-        Employee employeeOne = new Employee("Elias", 22, 165);
-        Employee employeeTwo = new Employee("Mathias", 15, 165);
-        Employee employeeThree = new Employee("Thomas", 12, 165);
-
-        System.out.println("The total salary of all employees: " + Employee.totalSum);
-    }
 
     private String name;
     private double rate;
@@ -67,5 +59,17 @@ public class Employee {
 
     public double getBonuses() {
         return getSalary() * 0.10;
+    }
+
+}
+
+class Main {
+    public static void main(String[] args) {
+
+        Employee employeeOne = new Employee("Elias", 22, 165);
+        Employee employeeTwo = new Employee("Mathias", 15, 165);
+        Employee employeeThree = new Employee("Thomas", 12, 165);
+
+        System.out.println("The total salary of all employees: " + Employee.totalSum);
     }
 }
