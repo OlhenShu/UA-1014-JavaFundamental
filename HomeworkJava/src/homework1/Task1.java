@@ -14,6 +14,6 @@ public class Task1 {
         System.out.println(thirdInput);
         System.out.println(secondInput);
         System.out.println(firstInput);
-
+sc.close();
     }
 }
