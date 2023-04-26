@@ -23,6 +23,7 @@ public class Person {
         p3.birthYear = 1993;
         Person p4 = new Person ("Mary","Morsten");
         p4.birthYear = 1992;
+        p4.changeName("Mary","Watson");
         Person p5 = new Person ("James","Moriarty");
         p5.birthYear = 1984;
 
@@ -37,7 +38,7 @@ public class Person {
         return lastName;
     }
 
-    public int setBirthYear() {
+    public int getBirthYear() {
         return birthYear;
     }
 
@@ -52,11 +53,11 @@ public class Person {
     }
     public static String output(Person p){
         return "Person [First name = " + p.getFirstName() + ", Last name = " + p.getLastName() +
-                ", birth year = " + p.setBirthYear() + ", age = " + getAge(p) + "]";
+                ", birth year = " + p.getBirthYear() + ", age = " + getAge(p) + "]";
     }
     public static int getAge(Person p){
         Date date = new Date();
         int year = date.getYear() + 1900;
-        return year - p.setBirthYear();
+        return year - p.getBirthYear();
     }
 }
