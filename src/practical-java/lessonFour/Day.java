@@ -8,16 +8,17 @@ public class Day {
         System.out.print("Please enter a number of the day of week: ");
         int day = scanner.nextInt();
 
-        switch(day) {
-            case 0: System.out.println("EN: Sunday \tDE: Sonntag"); break;
-            case 1: System.out.println("EN: Monday \tDE: Montag"); break;
-            case 2: System.out.println("EN: Tuesday \tDE: Dienstag"); break;
-            case 3: System.out.println("EN: Wednesday \tDE: Mittwoch"); break;
-            case 4: System.out.println("EN: Thursday \tDE: Donnerstag"); break;
-            case 5: System.out.println("EN: Friday \tDE: Freitag"); break;
-            case 6: System.out.println("EN: Saturday \tDE: Samstag"); break;
-            default: System.out.println("Such day not found.");
-        }
+        String dayOfWeek = switch(day) {
+            case 0 -> "EN: Sunday\tUA: Неділя";
+            case 1 -> "EN: Monday tUA: Понеділок";
+            case 2 -> "EN: Tuesday\tUA: Вівторок";
+            case 3 -> "EN: Wednesday\tUA: Середа";
+            case 4 -> "EN: Thursday\tUA: Четвер";
+            case 5 -> "EN: Friday\tUA: П'ятниця";
+            case 6 -> "EN: Saturday\tUA: Субота";
+            default -> "Such day not found.";
+        };
+        System.out.println(dayOfWeek);
         scanner.close();
     }
 }
