@@ -11,6 +11,6 @@ public class ReverseOrder {
         String second = scanner.nextLine();
         String third = scanner.nextLine();
 
-        System.out.printf("Output text:\n %s \n %s \n %s", third, second, first);
+        System.out.printf("Output text:%n %s %n %s %n %s", third, second, first);
     }
 }

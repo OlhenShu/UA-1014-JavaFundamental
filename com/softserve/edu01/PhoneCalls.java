@@ -23,10 +23,10 @@ public class PhoneCalls extends Calls {
         int durationCallUSA = scanner.nextInt();
 
         Calls calls = new Calls();
-        System.out.printf("The cost of your call to Ukraine: %s\n", calls.getPrice("Ukraine", durationCallUkraine));
-        System.out.printf("The cost of your call to Mexico: %s\n", calls.getPrice("Mexico", durationCallMexico));
-        System.out.printf("The cost of your call to USA: %s\n", calls.getPrice("USA", durationCallUSA));
-        System.out.printf("The total cost of all calls: %s\n", calls.getTotal());
+        System.out.printf("The cost of your call to Ukraine: %s%n", calls.getPrice("Ukraine", durationCallUkraine));
+        System.out.printf("The cost of your call to Mexico: %s%n", calls.getPrice("Mexico", durationCallMexico));
+        System.out.printf("The cost of your call to USA: %s%n", calls.getPrice("USA", durationCallUSA));
+        System.out.printf("The total cost of all calls: %s%n", calls.getTotal());
 
         scanner.close();
     }

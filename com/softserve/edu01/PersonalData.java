@@ -15,9 +15,9 @@ public class PersonalData {
         System.out.println("What is your name?");
         String name = scanner.nextLine();
 
-        System.out.printf("Where do you live, %s?\n", name);
+        System.out.printf("Where do you live, %s?%n", name);
         String from = scanner.nextLine();
 
-        System.out.printf("Your name is: %s\nYour live in %s", name, from);
+        System.out.printf("Your name is: %s%nYour live in %s", name, from);
     }
 }

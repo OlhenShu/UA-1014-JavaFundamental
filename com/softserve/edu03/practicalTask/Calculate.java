@@ -8,8 +8,8 @@ public class Calculate {
         double secondNumber = Calculate.getNumber("Enter the second number: ");
 
         Calculate calculate = new Calculate();
-        System.out.printf("The sum of %.2f and %.2f is %.2f\n", firstNumber, secondNumber, calculate.getTotal(firstNumber, secondNumber));
-        System.out.printf("The average of %.2f and %.2f is %.2f\n", firstNumber, secondNumber, calculate.getAverage(firstNumber, secondNumber));
+        System.out.printf("The sum of %.2f and %.2f is %.2f%n", firstNumber, secondNumber, calculate.getTotal(firstNumber, secondNumber));
+        System.out.printf("The average of %.2f and %.2f is %.2f%n", firstNumber, secondNumber, calculate.getAverage(firstNumber, secondNumber));
     }
 
     private static double getNumber(String prompt) {

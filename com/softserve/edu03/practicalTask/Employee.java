@@ -13,7 +13,7 @@ public class Employee {
         Employee employeeSecond = new Employee("Maxim", 25, 180);
         Employee employeeThird = new Employee("Evgenii", 7.4, 154.5);
 
-        System.out.printf("Employees: \n%s\n%s\n%s\n", employeeFirst, employeeSecond, employeeThird);
+        System.out.printf("Employees: %n%s%n%s%n%s%n", employeeFirst, employeeSecond, employeeThird);
         System.out.printf("Total sum: %s", Employee.getTotal());
     }
 
