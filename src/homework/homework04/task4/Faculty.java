@@ -27,7 +27,7 @@ public class Faculty {
             case 1, 2, 12, 11, 10, 9 -> faculty.season = Season.AUTUMN;
             case 3, 4, 5, 6, 7, 8 -> faculty.season = Season.SPRING;
             default -> System.out.println("You have entered an incorrect number." +
-                    " Please try another one in the 400-406 range.");
+                    " Please try another one.");
         }
 
         System.out.println("Name of this error: " + toString(faculty));
