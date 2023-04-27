@@ -5,14 +5,30 @@ import java.util.Scanner;
 public class Homework {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        homeWorkFirst(scanner);
-        homeWorkSecond();
-        homeWorkThird();
+        while (true) {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Choose action:");
+            System.out.println("\t1 - Check first practical task task ");
+            System.out.println("\t2 - Check second practical task task");
+            System.out.println("\t3 - Check third practical task task");
+            System.out.println("\t4 - End work ");
+            int choice = sc.nextInt();
+            switch (choice) {
+                case 1 -> homeWorkFirst(scanner);
+                case 2 -> homeWorkSecond(scanner);
+                case 3 -> homeWorkThird(scanner);
+                case 4 -> {
+                    sc.close();
+                    scanner.close();
+                    return;
+                }
+                default -> System.out.println("Necessary to enter option 1-4\n");
+            }
+        }
 
     }
 
     public static void homeWorkFirst(Scanner scanner) {
-
         System.out.println("enter number:");
         float a = scanner.nextFloat();
         System.out.println("enter number:");
@@ -37,8 +53,8 @@ public class Homework {
 
     }
 
-    public static void homeWorkSecond() {
-        Scanner scanner = new Scanner(System.in);
+    public static void homeWorkSecond(Scanner scanner) {
+
         System.out.println("enter number:");
         int a = scanner.nextInt();
         System.out.println("enter number:");
@@ -61,8 +77,8 @@ public class Homework {
         scanner.close();
     }
 
-    public static void homeWorkThird() {
-        Scanner scanner = new Scanner(System.in);
+    public static void homeWorkThird(Scanner scanner) {
+
         System.out.println("Enter number error");
         int whatTheError = scanner.nextInt();
         if (whatTheError == 100 || whatTheError == 101 || whatTheError == 102 || whatTheError == 103) {

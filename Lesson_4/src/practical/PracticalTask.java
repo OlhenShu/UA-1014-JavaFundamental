@@ -16,22 +16,15 @@ public class PracticalTask {
             System.out.println("\t4 - End work ");
             int choice = sc.nextInt();
             switch (choice) {
-                case 1:
-                    firstPracticalTasks(scanner);
-
-                    break;
-                case 2:
-                    secondPracticalTasks(scanner);
-                    break;
-                case 3:
-                    thirdPracticalTasks(scanner);
-                    break;
-                case 4:
+                case 1 -> firstPracticalTasks(scanner);
+                case 2 -> secondPracticalTasks(scanner);
+                case 3 -> thirdPracticalTasks(scanner);
+                case 4 -> {
                     sc.close();
                     scanner.close();
                     return;
-                default:
-                    System.out.println("Necessary to enter option 1-4\n");
+                }
+                default -> System.out.println("Necessary to enter option 1-4\n");
             }
         }
 
