@@ -2,16 +2,17 @@
 package homework.homework03.task2;
 
 import java.util.Scanner;
-public class Main {
+public class Small {
     public static void main(String[] args){
-        int a = getNumber("Input the first number:");
-        int b = getNumber("Input the second number:");
-        int c = getNumber("Input the third number:");
+        Scanner scanner = new Scanner(System.in);
+        int a = getNumber(scanner,"Input the first number: ");
+        int b = getNumber(scanner,"Input the second number: ");
+        int c = getNumber(scanner,"Input the third number: ");
+        scanner.close();
 
         System.out.println("The smallest number is "+ getSmall(a, b, c));
     }
-    static int getNumber(String prompt){
-        Scanner scanner = new Scanner(System.in);
+    static int getNumber(Scanner scanner,String prompt){
         System.out.print( prompt);
         return scanner.nextInt();
     }
