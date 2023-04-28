@@ -13,6 +13,7 @@ public class CheckNumbers {
         float secondNumber = scanner.nextFloat();
         System.out.print("\nEnter the third number: ");
         float thirdNumber = scanner.nextFloat();
+        scanner.close();
 
         boolean result = ifOutOfRange(firstNumber, secondNumber,thirdNumber);
         System.out.println(result);
