@@ -13,6 +13,7 @@ public class AreaOfTriangle {
         double sideThree = scanner.nextDouble();
         double area = calcTriangleArea(sideOne, sideTwo, sideThree);
         System.out.println("\nThe area of the triangle is " + area);
+        scanner.close();
     }
     
 

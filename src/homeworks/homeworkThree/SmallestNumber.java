@@ -10,6 +10,8 @@ public class SmallestNumber {
         int numbTwo = scanner.nextInt();
         System.out.print("\nInput the first number: ");
         int numbThree = scanner.nextInt();
+        scanner.close();
+
         int smallestNumb = findSmallestNumber(numbOne, numbTwo, numbThree);
         System.out.print("\nThe smallest number is " + smallestNumb);
     }
