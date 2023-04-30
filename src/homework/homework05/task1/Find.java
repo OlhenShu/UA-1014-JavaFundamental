@@ -16,12 +16,12 @@ public class Find {
             System.out.println("The second positive number is missing from the list.");
         }
         else {
-        System.out.println("Position of second positive number is " + (pp+1) + ".");
+        System.out.println("Position of second positive number is " + pp + ".");
         }
 
         int[] minN = minValue(arr);
         System.out.println("Minimum value is " + minN[0] + ". Position of minimum value is "
-                + (minN[1] + 1) + ".");
+                + minN[1] + ".");
 
         System.out.println("Product value is " + productValue(arr) + ".");
         sc.close();
