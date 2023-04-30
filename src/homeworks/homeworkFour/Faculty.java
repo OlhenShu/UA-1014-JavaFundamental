@@ -9,19 +9,19 @@ public class Faculty {
     private int students;
     Season season;
     
-    Season getSeason(String season) {
-        return this.season = switch (season) {
-            case "winter" -> Season.WINTER;
-            case "spring" -> Season.SPRING;
-            case "summer" -> Season.SUMMER;
-            case "autumn", "fall" -> Season.AUTUMN;
-            default -> Season.WINTER;
-        };
+    Season checkSeason(String season) {
+        switch (season.toLowerCase()) {
+            case "winter": return Season.WINTER;
+            case "spring": return Season.SPRING;
+            case "summer": return Season.SUMMER;
+            case "autumn": case "fall": return Season.AUTUMN;
+            default: throw new IllegalArgumentException("Unknown season: " + season);
+        }
     }
 
     Faculty(int students, String season) {
         this.students = students;
-        this.season = getSeason(season);
+        this.season = checkSeason(season);
     }
 
     public int getStudents() {
