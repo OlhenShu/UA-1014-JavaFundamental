@@ -27,6 +27,11 @@ public class Faculty {
     public int getStudents() {
         return students;
     }
+
+    @Override
+    public String toString() {
+        return "Faculty [students = " + students + ", curent season = " + season + "]";
+    }
 }
 
 class Main {
@@ -41,6 +46,6 @@ class Main {
         String season = split[1];
 
         Faculty faculty1 = new Faculty(students, season);
-        System.out.println("You've entered " + faculty1.getStudents() + " students and season " + faculty1.getSeason(season));
+        System.out.println(faculty1.toString());
     }
 }
