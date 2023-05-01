@@ -12,13 +12,6 @@ public class SumOrProduct {
             numbers[i] = sc.nextInt();
         }
 
-        while (!(checForPositive(5, numbers)) && !(checForZero(4, 10, numbers))) {
-            System.out.print("The second half of the list contains zero. We cannot find the product of 0." +
-                    " Please provide other numbers: ");
-            for(int i=0; i<=9; i++){
-                numbers[i] = sc.nextInt();
-            }
-        }
         if (checForPositive( 5, numbers)){
             int sumOfNumbers = 0;
             for(int i=0; i<=4; i++){
@@ -47,12 +40,5 @@ public class SumOrProduct {
         }
         return true;
     }
-    public static boolean checForZero(int i, int b, int[] numbers){
-        for(; i<=(b-1); i++){
-            if (numbers[i] == 0){
-                return false;
-            }
-        }
-        return true;
-    }
+
 }
