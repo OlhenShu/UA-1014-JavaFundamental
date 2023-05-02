@@ -14,29 +14,34 @@ public class FirstAndSecondTask {
             System.out.println("\t3 - End work ");
             int choice = sc.nextInt();
             switch (choice) {
-                case 1:
-                    firstHometask(scanner);
-                    break;
-                case 2:
-                    secondHometask(scanner);
-                    break;
-                case 3:
+                case 1 -> firstHometask(scanner);
+                case 2 -> secondHometask(scanner);
+                case 3 -> {
                     sc.close();
                     scanner.close();
                     return;
-                default:
-                    System.out.println("Necessary to enter option 1-3\n");
+                }
+                default -> System.out.println("Necessary to enter option 1-3\n");
             }
         }
     }
 
     public static void firstHometask(Scanner scanner) {
-        double a, b, result;
+        double a;
+        double b;
+        double c;
+        double result;
+        double result1;
+        double p;
         System.out.print("Input Side 1:");
         a = scanner.nextDouble();
         System.out.print("Input Side 2:");
         b = scanner.nextDouble();
-        result = 0.5 * a * b;
+        System.out.print("Input Side 3:");
+        c = scanner.nextDouble();
+        p=(a+b+c)/2;
+        result1=p*(p-a)*(p-b)*(p-b);
+        result = Math.sqrt(result1);
         System.out.println("the area of the triangle is " + result);
     }
 

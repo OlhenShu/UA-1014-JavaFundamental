@@ -1,9 +1,9 @@
-package Homework;
+package Homework.Person;
 
-import Homework.Person.Person;
 
-public class Main {
+public class TestPerson {
     public static void main(String[] args) {
+
         Person p1 = new Person("Roman", "Zozulia");
         p1.setBirthYear(2003);
         p1.output();
