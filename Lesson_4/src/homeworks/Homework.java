@@ -2,6 +2,7 @@ package homeworks;
 
 import java.util.Scanner;
 
+
 public class Homework {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -78,7 +79,6 @@ public class Homework {
     }
 
     public static void homeWorkThird(Scanner scanner) {
-
         System.out.println("Enter number error");
         int whatTheError = scanner.nextInt();
         if (whatTheError == 100 || whatTheError == 101 || whatTheError == 102 || whatTheError == 103) {
@@ -92,6 +92,19 @@ public class Homework {
         }
         if (whatTheError == 400 || whatTheError == 401 || whatTheError == 402) {
             System.out.println(WhatTheError.CLIENTERROR);
+        }
+    }
+
+    public enum WhatTheError {
+        INFO(100, 101, 102, 103),
+        SUCCESS(200, 201, 202),
+        REDIRECTION(300, 301, 302),
+        CLIENTERROR(400, 401, 402);
+
+        WhatTheError(int i, int i1, int i2, int i3) {
+        }
+
+        WhatTheError(int i, int i1, int i2) {
         }
     }
 
