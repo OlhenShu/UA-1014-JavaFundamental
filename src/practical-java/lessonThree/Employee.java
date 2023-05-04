@@ -17,7 +17,7 @@ public class Employee {
         this.name = name;
         this.rate = rate;
         this.hours = hours;
-        this.totalSum += getSalary();
+        Employee.totalSum += getSalary();
     }
 
     public String getName() {
@@ -69,7 +69,7 @@ class Main {
         Employee employeeOne = new Employee("Elias", 22, 165);
         Employee employeeTwo = new Employee("Mathias", 15, 165);
         Employee employeeThree = new Employee("Thomas", 12, 165);
-
+        
         System.out.println("The total salary of all employees: " + Employee.totalSum);
     }
 }
