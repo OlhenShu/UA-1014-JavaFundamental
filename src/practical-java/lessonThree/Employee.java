@@ -69,6 +69,10 @@ class Main {
         Employee employeeOne = new Employee("Elias", 22, 165);
         Employee employeeTwo = new Employee("Mathias", 15, 165);
         Employee employeeThree = new Employee("Thomas", 12, 165);
+
+        System.out.println(employeeOne.toString());
+        System.out.println(employeeTwo.toString());
+        System.out.println(employeeThree.toString());
         
         System.out.println("The total salary of all employees: " + Employee.totalSum);
     }
