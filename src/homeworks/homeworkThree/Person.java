@@ -44,9 +44,7 @@ public class Person {
         return currentYear - birthYear;
     }
 
-    public void input() {
-        Scanner scanner = new Scanner(System.in);
-
+    public void input(Scanner scanner) {
         System.out.print("Enter the first name: ");
         this.firstName = scanner.nextLine();
         System.out.print("\nEnter the last name: ");
@@ -72,24 +70,27 @@ public class Person {
 
 class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         Person personOne = new Person();
-        personOne.input();
+        personOne.input(scanner);
         personOne.output();
 
         Person personTwo = new Person();
-        personTwo.input();
+        personTwo.input(scanner);
         personTwo.output();
 
         Person personThree = new Person();
-        personThree.input();
+        personThree.input(scanner);
         personThree.output();
 
         Person personFour = new Person();
-        personFour.input();
+        personFour.input(scanner);
         personFour.output();
 
         Person personFive = new Person();
-        personFive.input();
+        personFive.input(scanner);
         personFive.output();
+
+        scanner.close();
     }
 }
