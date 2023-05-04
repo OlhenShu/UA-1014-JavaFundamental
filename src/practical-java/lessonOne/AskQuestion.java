@@ -1,4 +1,4 @@
-package lesson;
+package lessonOne;
 import java.util.Scanner;
 
 public class AskQuestion {
