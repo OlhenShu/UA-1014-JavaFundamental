@@ -64,6 +64,7 @@ class TestCar {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the year of production of the car: ");
         int year = scanner.nextInt();
+        scanner.close();
         
         for (Car carYear : car) {
             if (carYear.getYearOfProduction() == year) {
