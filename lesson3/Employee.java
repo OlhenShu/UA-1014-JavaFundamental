@@ -7,45 +7,50 @@ public class Employee
     private static int totalSum;
     private double bonuses;
 
-        public Employee(String name, int rate, int hours)
-        {
-            this.name = name;
-            this.rate = rate;
-            this.hours = hours;
-            totalSum += this.getSalary();
-            bonuses = this.getSalary() * 0.1;
-        }
+    public Employee(){
+        this.name = "";
+        this.rate = 0;
+        this.hours = 0;
+    }
+
+    public Employee(String name, int rate, int hours){
+        this.name = name;
+        this.rate = rate;
+        this.hours = hours;
+        totalSum += this.getSalary();
+        bonuses = this.getSalary() * 0.1;
+    }
 
     public String getName()
     {
-        return this.name = name;
+        return this.name;
     }
-    public void setName(String name)
-    {
+    public String setName(String name) {
         this.name = name;
+        return this.name;
     }
 
-    public int getRate()
-    {
-        return this.rate = rate;
+    public int getRate() {
+        return this.rate;
     }
-    public void setRate(int rate)
-    {
+    public int setRate(int rate) {
         this.rate = rate;
+        return this.rate;
     }
 
-    public int getHours()
-    {
-        return this.hours = hours;
+    public int getHours() {
+        return this.hours;
     }
-    public void setHours(int hours)
+    public int setHours(int hours)
     {
         this.hours = hours;
+        return this.hours;
     }
     public int getSalary()
     {
-        return rate * hours;
+        return this.rate * this.hours;
     }
+
     @Override
     public String toString()
     {
@@ -60,7 +65,7 @@ public class Employee
     }
 
     public double getBonuses(){
-            return bonuses;
+            return this.getSalary()*0.1;
     };
 
 
