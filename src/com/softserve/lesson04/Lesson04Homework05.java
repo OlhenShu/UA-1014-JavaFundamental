@@ -1,4 +1,4 @@
-package com.softserve.Lesson04;
+package com.softserve.lesson04;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,7 +20,7 @@ public class Lesson04Homework05 {
             arrayAge.add(arrayDog.get(i).getAge());
 
         }
-        HashSet<String> hashSet = new HashSet();
+        HashSet<String> hashSet = new HashSet<>();
         for (int i = 0; i < countDog; i++) {
             for (int j = i + 1; j < countDog; j++) {
                 if (arrayName.get(i).equals(arrayName.get(j))) {

@@ -1,4 +1,4 @@
-package com.softserve.Lesson04;
+package com.softserve.lesson04;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package com.softserve.Lesson03;
+package com.softserve.lesson03;
 
 import java.util.Scanner;
 
@@ -35,7 +35,7 @@ class Employee {
     private int countEmployee = 0;
 
     public static double totalSum = 0;
-    public static int count = 0;
+    private static int count = 0;
 
     public void setName(String name) {
         this.name = name;

@@ -1,4 +1,4 @@
-package com.softserve.Lesson03;
+package com.softserve.lesson03;
 
 import java.util.Scanner;
 
@@ -10,9 +10,9 @@ public class Lesson03Example {
 
         for (int i = 0; i < numbStudent; i++) {
             students[i] = new Student();
-            System.out.print("Input name Student" + students[i].numb + ": ");
+            System.out.print("Input name Student" + students[i].getNumb() + ": ");
             students[i].setName(scanner.next());
-            System.out.print("Input rating Student" + students[i].numb + ": ");
+            System.out.print("Input rating Student" + students[i].getNumb() + ": ");
             students[i].setRating(scanner.nextDouble());
         }
 
@@ -20,7 +20,7 @@ public class Lesson03Example {
             System.out.println(students[i]);
         }
 
-        System.out.print("Total rating = " + Student.ratingAll + "\nAverage rating = " + Student.avgRating());
+        System.out.print("Total rating = " + Student.getRatingAll() + "\nAverage rating = " + Student.avgRating());
     }
 }
 
@@ -28,10 +28,9 @@ class Student {
     private String name;
     private double rating;
 
-    public int numb = 0;
-
-    public static double ratingAll = 0;
-    public static int count = 0;
+    private int numb = 0;
+    private static double ratingAll = 0;
+    private static int count = 0;
 
     public void setName(String name) {
         this.name = name;
@@ -50,6 +49,14 @@ class Student {
         return rating;
     }
 
+    public static double getRatingAll() {
+        return ratingAll;
+    }
+
+    public int getNumb() {
+        return numb;
+    }
+
     public static double avgRating() {
         return ratingAll / count;
     }
@@ -65,17 +72,12 @@ class Student {
         numb = count;
     }
 
-    Student(String name, double rating) {
-        this.name = name;
-        this.rating = rating;
-        count++;
-        ratingAll += rating;
-        numb = count;
-    }
-
     boolean betterStudent(Student s) {
-        if (this.rating > s.rating) return true;
-        else return false;
+        if (this.rating > s.rating) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
