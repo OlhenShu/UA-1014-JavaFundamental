@@ -41,11 +41,9 @@ class Employee {
     public String getName() {
         return name;
     }
-
     public int getAge() {
         return age;
     }
-
     public double getSalary() {
         return salary;
     }

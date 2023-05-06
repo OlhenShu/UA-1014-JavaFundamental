@@ -34,15 +34,12 @@ abstract class Bird {
     public void setLayEggs(String layEggs) {
         this.layEggs = layEggs;
     }
-
     public String getFeathers() {
         return feathers;
     }
-
     public String getLayEggs() {
         return layEggs;
     }
-
     public abstract void fly();
 }
 

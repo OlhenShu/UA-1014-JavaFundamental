@@ -15,7 +15,6 @@ class ClassA {
         System.out.println("ClassA, metod m2, i=" + i);
     }
 
-
     public void m3() {
         System.out.print("ClassA, metod m3, runnind m4(): ");
         m4();
@@ -37,13 +36,11 @@ class ClassA {
 class ClassB extends ClassA {
     public double i = 1.1;
 
-
     @Override
     public void m1() {
         System.out.println("ClassB, metod m1, i=" + i);
 // super.m1();
     }
-
 
     @Override
     public void m4() {
@@ -55,20 +52,17 @@ class ClassB extends ClassA {
         System.out.println("ClassB, metod m5");
     }
 
-
     // @Override
     public static void m6() {
         System.out.println("ClassB, static metod m6");
         ClassA.m6();
     }
 
-    // private void m8() {
     public void m8() {
         System.out.println("ClassB, metod m8");
         super.m8();
     }
 }
-
 
 public class Lesson06PracticalTask01 {
     public static void main(String[] args) {
@@ -80,7 +74,7 @@ public class Lesson06PracticalTask01 {
         a.m2();
         a.m3();
         a.m4();
-        ClassA.m6(); // static running A.m6();
+        ClassA.m6();
         a.m8();
 
         System.out.println("Test ClassB.");
@@ -92,9 +86,9 @@ public class Lesson06PracticalTask01 {
         b.m4();
         ((ClassB) b).m5();
         if (b instanceof ClassB) {
-            ((ClassB) b).m5(); // No Runtime Error
+            ((ClassB) b).m5();
         }
-        b.m6(); // Running from ClassA; Architecture Error;
+        b.m6();
         ClassB.m6();
         ClassA.m6();
         b.m8();
