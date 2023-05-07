@@ -17,7 +17,11 @@ public class IntegersCalculate {
         int product = 1;
 
         for (int i = 0; i < numbers.length; i++) {
-            System.out.printf("Enter number %d: ", i + 1);
+            System.out.printf("Enter integer number #%d: ", i + 1);
+            while (!input.hasNextInt()) {
+                System.out.println("Please enter an integer.");
+                input.next();
+            }
             numbers[i] = input.nextInt();
 
             if (i < 5 && numbers[i] <= 0) {

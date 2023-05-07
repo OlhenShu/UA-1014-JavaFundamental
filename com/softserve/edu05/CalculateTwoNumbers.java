@@ -34,4 +34,5 @@ public class CalculateTwoNumbers {
             }
         } while(recalculate);
     }
+
 }

@@ -16,10 +16,25 @@ public class FindIntegers {
 
         int[] numbers = new int[5];
 
+
+
+
+
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.printf("Enter integer number #%d: ", i + 1);
+
+            while (!input.hasNextInt()) {
+                System.out.println("Please enter an integer.");
+                input.next();
+            }
+
+            numbers[i] = input.nextInt();
+        }
+        /*
         for (int i = 0; i < numbers.length; i++) {
             System.out.printf("Enter %d integer numbers: %n", i + 1);
             numbers[i] = input.nextInt();
-        }
+        }*/
 
         input.close();
 
