@@ -8,11 +8,11 @@ public class Sedan extends Car {
 
     @Override
     public void run() {
-        System.out.println("Sedan run");
+        System.out.println("Sedan " + this.getModel() + " " + getYearOfProduction() + " with max speed " + getMaxSpeed() + " km/h started and is running");
     }
 
     @Override
     public void stop() {
-        System.out.println("Sedan stop");
+        System.out.println("Sedan " + this.getModel() + " " + getYearOfProduction() + " is stopped");
     }
 }

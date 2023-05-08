@@ -8,11 +8,11 @@ public class Truck extends Car {
 
     @Override
     public void run() {
-        System.out.println("Truck run");
+        System.out.println("Truck " + this.getModel() + " " + getYearOfProduction() + " with max speed " + getMaxSpeed() + " km/h started and is running");
     }
 
     @Override
     public void stop() {
-        System.out.println("Truck stop");
+        System.out.println("Truck " + this.getModel() + " " + getYearOfProduction() + " is stopped");
     }
 }

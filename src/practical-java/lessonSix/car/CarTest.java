@@ -6,8 +6,8 @@ public class CarTest {
 
         arrayCars[0] = new Sedan("Toyota", 220, 2022);
         arrayCars[1] = new Sedan("Lexus", 260, 2023);
-        arrayCars[2] = new Truck("Volvo", 180, 2022);
-        arrayCars[3] = new Truck("MAN", 220, 2023);
+        arrayCars[2] = new Truck("Volvo", 160, 2022);
+        arrayCars[3] = new Truck("MAN", 180, 2023);
 
         for (Car car : arrayCars) {
             System.out.println("Model: " + car.getModel());
