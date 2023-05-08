@@ -31,3 +31,28 @@ public class Small {
         }
     }
 }
+//public class TheSmallestNumber {
+//    private static Scanner scanner = new Scanner(System.in);
+//
+//    public static void main(String[] args){
+//        int a = getNumber("Input the first integer number: ");
+//        int b = getNumber("Input the second integer number: ");
+//        int c = getNumber("Input the third integer number: ");
+//        System.out.println("The smallest number is "+ getSmall(a, b, c));
+//    }
+//    static int getNumber(String prompt){
+//        System.out.print( prompt);
+//        return scanner.nextInt();
+//    }
+//    static int getSmall(int a, int b, int c){
+//        if (a < b && a < c){
+//            return a;
+//        }
+//        else if  (b < a && b < c){
+//            return b;
+//        }
+//        else {
+//            return c;
+//        }
+//    }
+//}
