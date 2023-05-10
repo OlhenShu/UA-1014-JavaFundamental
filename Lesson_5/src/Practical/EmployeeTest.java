@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class EmployeeTest {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Employee[] empArr = initEmployeeArray();
+        var empArr = initEmployeeArray();
 
         System.out.println("Enter department number: ");
         int numberOfDepartment = sc.nextInt();
