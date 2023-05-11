@@ -1,4 +1,4 @@
-package homeworkSeven;
+package homeworkSeven.payment;
 
 public class ContractEmployee extends Employee {
     private String federalTaxIdNumber;

@@ -1,4 +1,4 @@
-package homeworkSeven;
+package homeworkSeven.payment;
 
 public interface Payment {
     

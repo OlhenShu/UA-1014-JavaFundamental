@@ -1,4 +1,4 @@
-package homeworkSeven;
+package homeworkSeven.payment;
 
 public abstract class Employee implements Payment {
     private String employeeId;

@@ -1,4 +1,4 @@
-package homeworkSeven;
+package homeworkSeven.payment;
 
 public class SalariedEmployee extends Employee {
     private String socialSecurityNumber;
