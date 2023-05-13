@@ -13,9 +13,10 @@ public class Faculty {
     public Season getSeason() {
         return season;
     }
+    private static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+
         Faculty faculty = new Faculty();
         System.out.print("Please enter the number of students in your faculty: ");
 
@@ -30,9 +31,9 @@ public class Faculty {
                     " Please try another one.");
         }
 
-        System.out.println("Name of this error: " + toString(faculty));
+        System.out.println(toString(faculty));
 
-        sc.close();
+        //sc.close();
     }
     public static String toString(Faculty faculty){
         return "Faculty [Amount of students = " + faculty.getNumberOfStudents() + ", season = " + faculty.getSeason().getEn() +"]";}

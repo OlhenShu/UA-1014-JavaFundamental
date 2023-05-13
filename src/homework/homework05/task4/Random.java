@@ -3,8 +3,8 @@ package homework.homework05.task4;
 import java.util.Scanner;
 
 public class Random {
+    private static Scanner sc = new Scanner(System.in);
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
         int randomNum = (int)(Math.random() * 11);
         System.out.println("Try to guess the number? (from 1 to 10)");
         int answer = sc.nextInt();

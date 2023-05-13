@@ -3,8 +3,9 @@ package homework.homework03.task1;
 import java.util.Scanner;
 
 public class Area {
+    private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
+        //Scanner scanner = new Scanner(System.in);
         int a = getNumber(scanner,"Input Side 1: ");
         int b = getNumber(scanner,"Input Side 2: ");
         int c = getNumber(scanner,"Input Side 3: ");

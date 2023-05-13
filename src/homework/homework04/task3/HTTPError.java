@@ -6,6 +6,7 @@ public enum HTTPError {
     BR("Bad Request"), NF("Not Found"), PR("Payment Required"), UN("Unauthorized"), MNA("Method Not Allowed"),
     NA("Not Acceptable");
     private final String error;
+    private static Scanner sc = new Scanner(System.in);
 
     HTTPError(String error) {
         this.error = error;
@@ -16,7 +17,7 @@ public enum HTTPError {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+
         System.out.print("Please enter the number of HTTP Error in the 400-406 range: ");
 
         HTTPError nameError = null;
@@ -34,7 +35,7 @@ public enum HTTPError {
         if (nameError != null) {
             System.out.println("Name of this error: " + nameError.getError());
         }
-        sc.close();
+        //sc.close();
     }
 }
 

@@ -3,8 +3,9 @@ package homework.homework05.task1;
 import java.util.Arrays;
 import java.util.Scanner;
 public class Find {
+    private static Scanner sc = new Scanner(System.in);
     public static void main (String[] args) {
-        Scanner sc = new Scanner(System.in);
+
         int[] arr = new int[5];
         System.out.print("Please, enter the 5 integer numbers: ");
 
@@ -24,7 +25,7 @@ public class Find {
                 + minN[1] + ".");
 
         System.out.println("Product value is " + productValue(arr) + ".");
-        sc.close();
+        //sc.close();
     }
 
     public static int positionPositive(int[] numbers){

@@ -2,9 +2,8 @@ package homework.homework05.task1;
 
 import java.util.Scanner;
 public class SumOrProduct {
-
+    private static Scanner sc = new Scanner(System.in);
     public static void main (String[] args) {
-        Scanner sc = new Scanner(System.in);
         int[] numbers = new int[10];
         System.out.print("Please, enter the 10 integer numbers: ");
 
@@ -29,7 +28,7 @@ public class SumOrProduct {
             System.out.println("Product of the last five elements is " + productOfNumbers + ".");
         }
 
-        sc.close();
+        //sc.close();
 
     }
     public static boolean checForPositive(int i, int[] numbers){
