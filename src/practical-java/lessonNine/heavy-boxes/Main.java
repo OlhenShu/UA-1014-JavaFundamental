@@ -1,4 +1,4 @@
-package lessonNine;
+package lessonNine.heavy-boxes;
 
 import java.util.ArrayList;
 import java.util.List;
