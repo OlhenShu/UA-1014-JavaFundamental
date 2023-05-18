@@ -7,6 +7,8 @@ package homework5;
 import java.util.Scanner;
 
 public class DemoCar {
+    static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args){
         Car[] cars = {
                 new Car("Hatchback",2010,2.0 ),
@@ -16,18 +18,18 @@ public class DemoCar {
 //                new Car("SUV",2022,2.2),
         };
 
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the year of the car 2010 or 2012 or2020 or 2022");
+        System.out.print("Please enter the year of the car. " +
+            "You can choose from the following options: 2010, 2012, 2020, or 2022: ");
 
         int a = Integer.parseInt(sc.nextLine());
 //        System.out.println( cars[2].getYearProduction());
 
 
-        for (int i = 0; i < cars.length; i++){
-            if ( a == cars[i].getYearProduction() ){
-                System.out.println("Year of production " + cars[i].getYearProduction());
-                System.out.println("Type " + cars[i].getType());
-                System.out.println("Engine capacity " + cars[i].getEngineCapacity());
+        for (Car car : cars) {
+            if (a == car.getYearProduction()) {
+                System.out.println("Year of production " + car.getYearProduction());
+                System.out.println("Type " + car.getType());
+                System.out.println("Engine capacity " + car.getEngineCapacity());
             }
         }
 
