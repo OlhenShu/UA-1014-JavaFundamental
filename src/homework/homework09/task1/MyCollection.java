@@ -31,8 +31,8 @@ public class MyCollection {
     }
     public static void swapMaxAndMin(List<Integer> myCollection){
 
-        int min = minFind(myCollection);
-        int max = maxFind(myCollection);
+        int min = Collections.min(myCollection);
+        int max = Collections.max(myCollection);
         int indexMin = myCollection.indexOf(min);
         int indexMax = myCollection.indexOf(max);
         System.out.println("Collection: " + myCollection + ", max = " + max + ", indexMax = " + indexMax +
@@ -42,24 +42,6 @@ public class MyCollection {
         System.out.println(myCollection);
     }
 
-    private static int maxFind(List<Integer> myCollection) {
-        int max = 0;
-        for(int i = 0; i < myCollection.size(); i++){
-            if(myCollection.get(i) > max){
-                max = myCollection.get(i);
-            }
-        }
-        return max;
-    }
-    public static int minFind(List<Integer> myCollection){
-        int min = myCollection.get(0);
-        for(int i = 0; i < myCollection.size(); i++){
-            if(myCollection.get(i) < min){
-                min = myCollection.get(i);
-            }
-        }
-        return min;
-    }
 
     public static void insertThreeDigitNumber(List<Integer> myCollection, Random rnd){
         int negativeElement = 0;
@@ -112,7 +94,7 @@ public class MyCollection {
     }
 
     public static void minNextRemove(List<Integer> myCollection){
-        int min = minFind(myCollection);
+        int min = Collections.min(myCollection);
         int indexMin = myCollection.indexOf(min);
         if (!(indexMin == myCollection.size())){
             myCollection.remove((indexMin+1));
