@@ -7,6 +7,7 @@ class Scratch {
             case 1:
                 System.out.println("One");
                 // fall through
+                //
             case 12:
                 System.out.println("Twelve");
                 break;
