@@ -26,7 +26,7 @@ bin/
 .vscode/
 .idea/
 /lib/
-
+/target/
 ### Mac OS ###
 .DS_Store
 
