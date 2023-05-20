@@ -29,7 +29,7 @@ public class UnionAndIntersect {
         return set;
     }
 
-    public static Set<Integer> intersect (Set<Integer> set1, Set<Integer> set2){
+    public static Set<Integer> intersect (Set set1, Set set2){
         Set<Integer> set = new HashSet<>(set1);
         Iterator<Integer> iterator = set.iterator();
         while (iterator.hasNext()) {
@@ -45,7 +45,7 @@ public class UnionAndIntersect {
         }
     }
 
-    public static Set addNumbers(Set<Integer> numbers, int size){
+    public static Set<Integer> addNumbers(Set<Integer> numbers, int size){
         for (int i = 0; i < size; i++){
             numbers.add((int)(Math.random() * 11));
         }
