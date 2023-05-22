@@ -23,7 +23,6 @@ public class homework11Task4 {
             String pattern = "[a-zA-Z\\s-]+";
             Pattern p = Pattern.compile(pattern);
             m = p.matcher(name);
-
         }while (!m.matches());
 
         Random random = new Random();

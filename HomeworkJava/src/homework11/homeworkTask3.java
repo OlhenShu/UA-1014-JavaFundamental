@@ -10,6 +10,7 @@ public class homeworkTask3 {
         String text = scanner.nextLine();
         Pattern p = Pattern.compile(pattern);
         Matcher m = p.matcher(text);
+
         while (m.find()) {
             String match = m.group();
             System.out.println("Found match: " + match);

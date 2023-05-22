@@ -16,7 +16,6 @@ public class homeworkTask1 {
                 longestWord = word;
             }
         }
-
         System.out.println("Longest word: " + longestWord);
         System.out.println("Length of the longest word: " + longestWord.length());
 
