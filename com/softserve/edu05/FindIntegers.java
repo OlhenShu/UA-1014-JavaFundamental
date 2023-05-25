@@ -1,5 +1,6 @@
 package com.softserve.edu05;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -13,62 +14,58 @@ import java.util.Scanner;
 public class FindIntegers {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-
         int[] numbers = new int[5];
 
+        try {
+            for (int i = 0; i < numbers.length; i++) {
+                System.out.printf("Enter integer number #%d: ", i + 1);
 
+                while (!input.hasNextInt()) {
+                    System.out.println("Please enter an integer.");
+                    input.next();
+                }
 
-
-
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.printf("Enter integer number #%d: ", i + 1);
-
-            while (!input.hasNextInt()) {
-                System.out.println("Please enter an integer.");
-                input.next();
+                numbers[i] = input.nextInt();
             }
 
-            numbers[i] = input.nextInt();
-        }
-        /*
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.printf("Enter %d integer numbers: %n", i + 1);
-            numbers[i] = input.nextInt();
-        }*/
+            int firstPositiveIndex = 0;
+            int secondPositiveIndex = -1;
+            int min = numbers[0];
+            int minIndex = 0;
+            int product = 1;
 
-        input.close();
+            for (int i = 0; i < numbers.length; i++) {
+                // position of second positive number
+                if (numbers[i] > 0) {
+                    if (firstPositiveIndex == 0) {
+                        firstPositiveIndex = i;
+                    } else if (secondPositiveIndex == -1) {
+                        secondPositiveIndex = i;
+                    }
+                }
 
-        int firstPositiveIndex = 0;
-        int secondPositiveIndex = -1;
-        int min = numbers[0];
-        int minIndex = 0;
-        int product = 1;
+                // minimum value and its position in the array
+                if (numbers[i] < min) {
+                    min = numbers[i];
+                    minIndex = i;
+                }
 
-        for (int i = 0; i < numbers.length; i++) {
-            // position of second positive number
-            if (numbers[i] > 0) {
-                if (firstPositiveIndex == 0) {
-                    firstPositiveIndex = i;
-                } else if (secondPositiveIndex == -1) {
-                    secondPositiveIndex = i;
+                //calculate the product of all entered even numbers (exclude 0 from even if entered by user)
+                if (numbers[i] != 0 && numbers[i] % 2 == 0) {
+                    System.out.println(i + " " + numbers[i]);
+                    product *= numbers[i];
                 }
             }
 
-            // minimum value and its position in the array
-            if (numbers[i] < min) {
-                min = numbers[i];
-                minIndex = i;
-            }
-
-            //calculate the product of all entered even numbers (exclude 0 from even if entered by user)
-            if (numbers[i] != 0 && numbers[i] % 2 == 0) {
-                System.out.println(i + " " + numbers[i]);
-                product *= numbers[i];
-            }
+            System.out.printf("Position of second positive number: %d%n", secondPositiveIndex);
+            System.out.printf("Minimum value: %d, position: %d%n", min, minIndex);
+            System.out.printf("Product of all even numbers: %d%n", product);
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input. Please enter integer.");
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Bad array index.");
+        } finally {
+            input.close();
         }
-
-        System.out.printf("Position of second positive number: %d%n", secondPositiveIndex);
-        System.out.printf("Minimum value: %d, position: %d%n", min, minIndex);
-        System.out.printf("Product of all even numbers: %d%n", product);
     }
 }

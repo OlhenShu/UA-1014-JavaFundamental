@@ -13,24 +13,26 @@ public class IntegerNumbers {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Input first number: ");
-        //the first number is set as standard
-        setMIN(input.nextInt());
-        setMAX(getMIN());
+        try {
+            System.out.print("Input first number: ");
+            //the first number is set as standard
+            setMIN(input.nextInt());
+            setMAX(getMIN());
 
-        System.out.print("Input second number: ");
-        int second = input.nextInt();
+            System.out.print("Input second number: ");
+            int second = input.nextInt();
 
-        System.out.print("Input third number: ");
-        int third = input.nextInt();
+            System.out.print("Input third number: ");
+            int third = input.nextInt();
 
-        input.close();
+            checkNumber(second);
+            checkNumber(third);
 
-        checkNumber(second);
-        checkNumber(third);
-
-        System.out.printf("Minimum value: %d%n", getMIN());
-        System.out.printf("Maximum value: %d%n", getMAX());
+            System.out.printf("Minimum value: %d%n", getMIN());
+            System.out.printf("Maximum value: %d%n", getMAX());
+        } finally {
+            input.close();
+        }
     }
 
     private static void checkNumber(int number) {

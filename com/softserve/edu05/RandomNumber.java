@@ -1,5 +1,6 @@
 package com.softserve.edu05;
 
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -16,20 +17,25 @@ public class RandomNumber {
         Scanner scanner = new Scanner(System.in);
 
         int randomNumber = random.nextInt(100) + 1;
-
         int inputNumber;
 
-        do {
-            System.out.print("Enter number (1-100): ");
-            inputNumber = scanner.nextInt();
+        try {
+            do {
+                System.out.print("Enter number (1-100): ");
+                inputNumber = scanner.nextInt();
 
-            if (inputNumber > randomNumber) {
-                System.out.println("Too high, try again.");
-            } else if (inputNumber < randomNumber) {
-                System.out.println("Too low, try again.");
-            }
-        } while (inputNumber != randomNumber);
+                if (inputNumber > randomNumber) {
+                    System.out.println("Too high, try again.");
+                } else if (inputNumber < randomNumber) {
+                    System.out.println("Too low, try again.");
+                }
+            } while (inputNumber != randomNumber);
 
-        System.out.println("Congratulations! You guessed the number.");
+            System.out.println("Congratulations! You guessed the number.");
+        }  catch (InputMismatchException e) {
+            System.out.println("Invalid input. Please enter an integer.");
+        } finally {
+            scanner.close();
+        }
     }
 }

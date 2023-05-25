@@ -9,18 +9,20 @@ public class FloatNumbers {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Input first number: ");
-        float first = input.nextFloat();
+        try {
+            System.out.print("Input first number: ");
+            float first = input.nextFloat();
 
-        System.out.print("Input second number: ");
-        float second = input.nextFloat();
+            System.out.print("Input second number: ");
+            float second = input.nextFloat();
 
-        System.out.print("Input third number: ");
-        float third = input.nextFloat();
+            System.out.print("Input third number: ");
+            float third = input.nextFloat();
 
-        input.close();
-
-        System.out.printf(inRange(first) + "%n" + inRange(second) + "%n" + inRange(third));
+            System.out.printf(inRange(first) + "%n" + inRange(second) + "%n" + inRange(third));
+        } finally {
+            input.close();
+        }
     }
 
     private static String inRange(float number) {

@@ -14,18 +14,20 @@ public class Triangle {
     public Triangle() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Input side 1: ");
-        this.sideA = scanner.nextDouble();
+        try {
+            System.out.print("Input side 1: ");
+            this.sideA = scanner.nextDouble();
 
-        System.out.print("Input side 2: ");
-        this.sideB = scanner.nextDouble();
+            System.out.print("Input side 2: ");
+            this.sideB = scanner.nextDouble();
 
-        System.out.print("Input side 3: ");
-        this.sideC = scanner.nextDouble();
+            System.out.print("Input side 3: ");
+            this.sideC = scanner.nextDouble();
 
-        scanner.close();
-
-        System.out.printf("Area of triangle: %.2f%n", calculateArea());
+            System.out.printf("Area of triangle: %.2f%n", calculateArea());
+        } finally {
+            scanner.close();
+        }
     }
 
     public double calculateArea() {

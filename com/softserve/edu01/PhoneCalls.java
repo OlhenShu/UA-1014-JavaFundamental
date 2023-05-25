@@ -1,5 +1,7 @@
 package com.softserve.edu01;
 
+import java.util.NoSuchElementException;
+import java.util.InputMismatchException;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -13,22 +15,28 @@ public class PhoneCalls extends Calls {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Call duration to Ukraine (in seconds)");
-        int durationCallUkraine = scanner.nextInt();
+        try {
+            System.out.println("Call duration to Ukraine (in seconds)");
+            int durationCallUkraine = scanner.nextInt();
 
-        System.out.println("Call duration to Mexico (in seconds)");
-        int durationCallMexico = scanner.nextInt();
+            System.out.println("Call duration to Mexico (in seconds)");
+            int durationCallMexico = scanner.nextInt();
 
-        System.out.println("Call duration to USA (in seconds)");
-        int durationCallUSA = scanner.nextInt();
+            System.out.println("Call duration to USA (in seconds)");
+            int durationCallUSA = scanner.nextInt();
 
-        Calls calls = new Calls();
-        System.out.printf("The cost of your call to Ukraine: %s%n", calls.getPrice("Ukraine", durationCallUkraine));
-        System.out.printf("The cost of your call to Mexico: %s%n", calls.getPrice("Mexico", durationCallMexico));
-        System.out.printf("The cost of your call to USA: %s%n", calls.getPrice("USA", durationCallUSA));
-        System.out.printf("The total cost of all calls: %s%n", calls.getTotal());
-
-        scanner.close();
+            Calls calls = new Calls();
+            System.out.printf("The cost of your call to Ukraine: %s%n", calls.getPrice("Ukraine", durationCallUkraine));
+            System.out.printf("The cost of your call to Mexico: %s%n", calls.getPrice("Mexico", durationCallMexico));
+            System.out.printf("The cost of your call to USA: %s%n", calls.getPrice("USA", durationCallUSA));
+            System.out.printf("The total cost of all calls: %s%n", calls.getTotal());
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input. Please enter a valid duration (integer).");
+        } catch (NoSuchElementException e) {
+            System.out.println("Error reading input. Please try again.");
+        } finally {
+            scanner.close();
+        }
     }
 }
 
@@ -37,19 +45,25 @@ class Calls {
     private final HashMap<String, Double> tariffs = new HashMap<>();
 
     public Calls() {
-        System.out.println("Cost per minute to Ukraine (Format double)");
-
         Scanner scanner = new Scanner(System.in);
 
-        tariffs.put("Ukraine", scanner.nextDouble());
+        try {
+            System.out.println("Cost per minute to Ukraine (Format double)");
+            tariffs.put("Ukraine", scanner.nextDouble());
 
-        System.out.println("Cost per minute to Mexico (Format double)");
-        tariffs.put("Mexico", scanner.nextDouble());
+            System.out.println("Cost per minute to Mexico (Format double)");
+            tariffs.put("Mexico", scanner.nextDouble());
 
-        System.out.println("Cost per minute to USA (Format double)");
-        tariffs.put("USA", scanner.nextDouble());
+            System.out.println("Cost per minute to USA (Format double)");
+            tariffs.put("USA", scanner.nextDouble());
 
-        scanner.close();
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input. Please enter a valid cost (double).");
+        } catch (NoSuchElementException e) {
+            System.out.println("Error reading input. Please try again.");
+        } finally {
+            scanner.close();
+        }
     }
 
     public String getPrice(String country, int duration) {

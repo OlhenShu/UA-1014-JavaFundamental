@@ -2,6 +2,7 @@ package com.softserve.edu05;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -66,14 +67,20 @@ public class Car {
                 new Car("Minivan", 2002, 1.5),
         };
 
-        System.out.print("Enter year to search: ");
-        int searchYear = input.nextInt();
-        input.close();
+        try {
+            System.out.print("Enter year to search: ");
+            int searchYear = input.nextInt();
+            input.close();
 
-        System.out.printf("Cars produced in year %d:%n", searchYear);
-        getByYears(cars, searchYear);
+            System.out.printf("Cars produced in year %d:%n", searchYear);
+            getByYears(cars, searchYear);
 
-        System.out.printf("Sorted cars by the field “year of production”:%n");
-        sortedCarsByYearProduction(cars);
+            System.out.printf("Sorted cars by the field “year of production”:%n");
+            sortedCarsByYearProduction(cars);
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input. Please enter a valid year.");
+        } finally {
+            input.close();
+        }
     }
 }

@@ -3,7 +3,7 @@ package com.softserve.edu04;
 import java.util.Scanner;
 
 /**
- *  Input a number representing an HTTP error (such as 400, 401, 402, etc.) and output the name
+ * Input a number representing an HTTP error (such as 400, 401, 402, etc.) and output the name
  * of the error using an enum called HTTPError.
  */
 public class HTTPErrorMain {
@@ -28,18 +28,22 @@ public class HTTPErrorMain {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter http error code: ");
-        int errorCode = input.nextInt();
+        try {
+            System.out.print("Enter http error code: ");
+            int errorCode = input.nextInt();
 
-        input.close();
+            input.close();
 
-        for (HTTPError error : HTTPError.values()) {
-            if (errorCode == error.getErrorCode()) {
-                System.out.printf("Your error code: %s", error.name());
-                return;
+            for (HTTPError error : HTTPError.values()) {
+                if (errorCode == error.getErrorCode()) {
+                    System.out.printf("Your error code: %s", error.name());
+                    return;
+                }
             }
-        }
 
-        System.out.print("Your error code not found.");
+            System.out.print("Your error code not found.");
+        } finally {
+            input.close();
+        }
     }
 }

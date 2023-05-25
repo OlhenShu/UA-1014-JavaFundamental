@@ -1,5 +1,6 @@
 package com.softserve.edu05;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -19,20 +20,25 @@ public class CalculateTwoNumbers {
         do {
             recalculate = false;
 
-            System.out.print("Input first number: ");
-            firstNumber = input.nextDouble();
+            try {
+                System.out.print("Input first number: ");
+                firstNumber = input.nextDouble();
 
-            System.out.print("Input second number: ");
-            secondNumber = input.nextDouble();
+                System.out.print("Input second number: ");
+                secondNumber = input.nextDouble();
 
-            System.out.printf("Sum of number %.2f and %.2f = %.2f%n",
-                    firstNumber, secondNumber, (firstNumber + secondNumber));
-            System.out.println("Do you want to perform the operation again (yes/no)?");
+                System.out.printf("Sum of number %.2f and %.2f = %.2f%n",
+                        firstNumber, secondNumber, (firstNumber + secondNumber));
+                System.out.println("Do you want to perform the operation again (yes/no)?");
 
-            if (input.next().equalsIgnoreCase("yes")) {
-                recalculate = true;
+                if (input.next().equalsIgnoreCase("yes")) {
+                    recalculate = true;
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a valid number.");
+                input.nextLine();
             }
-        } while(recalculate);
+        } while (recalculate);
     }
 
 }

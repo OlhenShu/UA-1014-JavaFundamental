@@ -1,5 +1,7 @@
 package com.softserve.edu03;
 
+import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Person {
@@ -63,14 +65,22 @@ public class Person {
     private void input() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Input the first name: ");
-        setFirstName(scanner.nextLine());
+        try {
+            System.out.print("Input the first name: ");
+            setFirstName(scanner.nextLine());
 
-        System.out.print("Input the last name: ");
-        setLastName(scanner.nextLine());
+            System.out.print("Input the last name: ");
+            setLastName(scanner.nextLine());
 
-        System.out.print("Input the birthday year: ");
-        setBirthYear(scanner.nextInt());
+            System.out.print("Input the birthday year: ");
+            setBirthYear(scanner.nextInt());
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input. Please enter a valid integer for the birth year.");
+        } catch (NoSuchElementException e) {
+            System.out.println("Error reading input. Please try again.");
+        } finally {
+            scanner.close();
+        }
     }
 
     private void output() {

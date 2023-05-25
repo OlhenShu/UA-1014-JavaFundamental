@@ -36,16 +36,21 @@ public class Faculty {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter number of students: ");
-        int numStudents = input.nextInt();
+        try {
+            System.out.print("Enter number of students: ");
+            int numStudents = input.nextInt();
 
-        System.out.print("Enter current season: ");
-        String seasonName = input.next();
-        input.close();
+            System.out.print("Enter current season: ");
+            String seasonName = input.next();
+            input.close();
 
-        Season currentSeason = Season.valueOf(seasonName.toUpperCase());
-        Faculty faculty = new Faculty(numStudents, currentSeason);
+            Season currentSeason = Season.valueOf(seasonName.toUpperCase());
+            Faculty faculty = new Faculty(numStudents, currentSeason);
 
-        System.out.printf("Faculty has %d students and it's currently %s season.", faculty.numStudents, faculty.currentSeason.getSeasonName());
+            System.out.printf("Faculty has %d students and it's currently %s season.",
+                    faculty.numStudents, faculty.currentSeason.getSeasonName());
+        } finally {
+            input.close();
+        }
     }
 }
