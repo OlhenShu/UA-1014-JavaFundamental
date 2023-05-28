@@ -42,9 +42,9 @@ public class EmployeeMap {
         scanner.nextLine();
         String input = scanner.nextLine();
         Integer keyFound = null;
-        for (Integer key : list.keySet()) {
-            if (list.get(key).equals(input)) {
-                keyFound = key;
+        for (Map.Entry<Integer, String> key : list.entrySet()) {
+            if (key.getValue().equals(input)) {
+                keyFound = key.getKey();
                 break;
             }
         }
