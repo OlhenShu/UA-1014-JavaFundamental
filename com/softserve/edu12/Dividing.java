@@ -3,6 +3,10 @@ package com.softserve.edu12;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Create div() method, which calculates the dividing of two double type numbers. In main()
+ * method input 2 double numbers and call this method. Catch all exceptions.
+ */
 public class Dividing {
     public static void main(String[] args) {
         try {
