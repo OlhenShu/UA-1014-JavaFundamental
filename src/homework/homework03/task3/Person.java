@@ -1,5 +1,6 @@
 package homework.homework03.task3;
 
+import java.time.LocalDate;
 import java.util.Date;
 public class Person {
     private String firstName;
@@ -56,8 +57,8 @@ public class Person {
                 ", birth year = " + p.getBirthYear() + ", age = " + getAge(p) + "]";
     }
     public static int getAge(Person p){
-        Date date = new Date();
-        int year = date.getYear() + 1900;
+        LocalDate date = LocalDate.now();
+        int year = date.getYear();
         return year - p.getBirthYear();
     }
 }
