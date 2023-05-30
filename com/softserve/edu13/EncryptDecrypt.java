@@ -1,6 +1,7 @@
 package com.softserve.edu13;
 
 import java.util.Scanner;
+import java.util.function.UnaryOperator;
 
 /**
  * Create two methods String encrypt(String s, int n) and String decrypt(Stirng s, int n)
@@ -9,7 +10,39 @@ import java.util.Scanner;
  * return decoded value
  */
 public class EncryptDecrypt {
+    public static void main(String[] args) {
+        String message = "abc";
+        CryptoPair coder = cesarCode(3);
+        String codedMessage = coder.code.apply(message);
+        String decodedMessage = coder.decode.apply(codedMessage);
 
+        System.out.println(message);
+        System.out.println(codedMessage);
+        System.out.println(decodedMessage);
+    }
+
+    record CryptoPair(
+            UnaryOperator<String> code,
+            UnaryOperator<String> decode
+    ) {
+    }
+
+    static CryptoPair cesarCode(int n) {
+        return new CryptoPair(
+                s -> encrypt(s, n),
+                s -> encrypt(s, -n)
+        );
+    }
+
+    static String encrypt(String s, int n) {
+        var chars = s.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            chars[i] += n;
+        }
+
+        return new String(chars);
+    }
+    /*
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         String str = input.next();
@@ -62,5 +95,5 @@ public class EncryptDecrypt {
 
         return encrypted.toString();
 
-    }
+    }*/
 }
