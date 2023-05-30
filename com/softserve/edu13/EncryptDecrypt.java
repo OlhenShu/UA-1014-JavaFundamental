@@ -26,7 +26,7 @@ public class EncryptDecrypt {
 
     public static String encrypt(String s, int n) {
         try {
-            return algo("encrypt", s, n);
+            return crypt("encrypt", s, n);
         } catch (Exception e) {
             System.out.println("Encryption failed: " + e.getMessage());
             return "";
@@ -35,14 +35,14 @@ public class EncryptDecrypt {
 
     public static String decrypt(String s, int n) {
         try {
-            return algo("decrypt", s, n);
+            return crypt("decrypt", s, n);
         } catch (Exception e) {
             System.out.println("Decryption failed: " + e.getMessage());
             return "";
         }
     }
 
-    private static String algo(String method, String s, int n) {
+    private static String crypt(String method, String s, int n) {
         StringBuilder encrypted = new StringBuilder();
         char offset;
 
