@@ -92,9 +92,7 @@ class ToDo {
                    return product.getDate().isBefore(today.minusYears(1));
                })
                .toList();
-       for (var product: filterListProduct){
-           System.out.println(product);
-       }
+        filterListProduct.forEach(System.out::println);
 
     }
 }
