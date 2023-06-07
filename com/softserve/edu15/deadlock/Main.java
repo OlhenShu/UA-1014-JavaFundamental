@@ -1,4 +1,4 @@
-package com.softserve.edu15.Deadlock;
+package com.softserve.edu15.deadlock;
 
 public class Main {
     public static void main(String[] args) {

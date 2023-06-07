@@ -1,4 +1,4 @@
-package com.softserve.edu15.Deadlock;
+package com.softserve.edu15.deadlock;
 
 /**
  * Cause a deadlock. Organize the expectations of ending a thread in main(), and make
