@@ -35,13 +35,10 @@ public class Employee {
     }
     public static void main(String[] args){
         Stream<Employee>  streamEmployees = Stream.of(
-                new Employee("Din"),
-                new Employee("Din"),
                 new Employee("Bob"),
-                new Employee("Sam"),
                 new Employee("Din"),
                 new Employee("Sam"),
-                new Employee("Din")
+                new Employee("Sam")
                 );
 
         System.out.println(mostPopularName(streamEmployees));
