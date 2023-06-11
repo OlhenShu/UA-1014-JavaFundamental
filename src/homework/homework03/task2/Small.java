@@ -6,20 +6,20 @@ import java.util.Scanner;
 public class Small {
     private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args){
-        int a = getNumber(scanner,"Input the first number: ");
-        int b = getNumber(scanner,"Input the second number: ");
-        int c = getNumber(scanner,"Input the third number: ");
+        int a = getNumber("Input the first number: ");
+        int b = getNumber("Input the second number: ");
+        int c = getNumber("Input the third number: ");
 
         System.out.println("The smallest number is "+ getSmall(a, b, c));
     }
-    static int getNumber(Scanner scanner,String prompt){
-        System.out.print( prompt);
+    static int getNumber(String prompt){
+        System.out.print(prompt);
         try {
             return scanner.nextInt();
         } catch (InputMismatchException e) {
             System.out.println("Invalid input. Please enter an integer.");
             scanner.nextLine();
-            return getNumber(scanner, prompt);
+            return getNumber(prompt);
         }
     }
     static int getSmall(int a, int b, int c){
