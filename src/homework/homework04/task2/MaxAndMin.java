@@ -1,5 +1,6 @@
 package homework.homework04.task2;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MaxAndMin {
@@ -22,6 +23,12 @@ public class MaxAndMin {
     }
     static int getNumber(Scanner sc,String prompt) {
         System.out.print(prompt);
-        return sc.nextInt();
+        try {
+            return sc.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input. Please enter an integer.");
+            sc.nextLine();
+            return getNumber(sc, prompt);
+        }
     }
 }

@@ -1,5 +1,6 @@
 package homework.homework04.task1;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Range0401 {
@@ -20,7 +21,13 @@ public class Range0401 {
     }
     static float getNumber(Scanner sc,String prompt) {
         System.out.print(prompt);
-        return sc.nextFloat();
+        try {
+            return sc.nextFloat();
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input. Please enter a floating point number.");
+            sc.nextLine();
+            return getNumber(sc, prompt);
+        }
     }
     static boolean checkRange(float num){
         return (num >= -5 && num <= 5);

@@ -1,5 +1,6 @@
 package homework.homework04.task3;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public enum HTTPError {
@@ -18,24 +19,45 @@ public enum HTTPError {
 
     public static void main(String[] args) {
 
-        System.out.print("Please enter the number of HTTP Error in the 400-406 range: ");
+        HTTPError nameError =
+                getNumberError("Please enter the number of HTTP Error in the 400-406 range: ");
 
-        HTTPError nameError = null;
-        
-        switch (sc.nextInt()) {
-            case 400-> nameError = HTTPError.BR;
-            case 401 -> nameError = HTTPError.UN;
-            case 402 -> nameError = HTTPError.PR;
-            case 404 -> nameError = HTTPError.NF;
-            case 405 -> nameError = HTTPError.MNA;
-            case 406 -> nameError = HTTPError.NA;
-            default -> System.out.println("You have entered an incorrect number." +
-                    " Please try another one in the 400-406 range.");
-        }
         if (nameError != null) {
             System.out.println("Name of this error: " + nameError.getError());
         }
         //sc.close();
+    }
+
+    static HTTPError getNumberError(String prompt) {
+        System.out.print(prompt);
+        try {
+            switch (sc.nextInt()) {
+                case 400-> {
+                    return HTTPError.BR;
+                }
+                case 401 -> {
+                    return HTTPError.UN;
+                }
+                case 402 -> {
+                    return HTTPError.PR;
+                }
+                case 404 -> {
+                    return HTTPError.NF;
+                }
+                case 405 -> {
+                    return HTTPError.MNA;
+                }
+                case 406 -> {
+                    return HTTPError.NA;
+                }
+                default -> {System.out.println("You have entered an incorrect number." +
+                        " Please try another one in the 400-406 range."); return getNumberError(prompt);}
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input. Please enter an integer.");
+            sc.nextLine();
+            return getNumberError(prompt);
+        }
     }
 }
 

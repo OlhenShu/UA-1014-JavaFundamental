@@ -1,6 +1,7 @@
 
 package homework.homework03.task2;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Small {
     private static Scanner scanner = new Scanner(System.in);
@@ -13,7 +14,13 @@ public class Small {
     }
     static int getNumber(Scanner scanner,String prompt){
         System.out.print( prompt);
-        return scanner.nextInt();
+        try {
+            return scanner.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input. Please enter an integer.");
+            scanner.nextLine();
+            return getNumber(scanner, prompt);
+        }
     }
     static int getSmall(int a, int b, int c){
         if (a < b && a < c){

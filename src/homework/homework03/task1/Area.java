@@ -1,5 +1,6 @@
 package homework.homework03.task1;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Area {
@@ -15,7 +16,13 @@ public class Area {
     }
     static int getNumber(Scanner scanner, String prompt){
         System.out.print(prompt);
-        return scanner.nextInt();
+        try {
+            return scanner.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input. Please enter an integer.");
+            scanner.nextLine();
+            return getNumber(scanner, prompt);
+        }
     }
     static double getArea(double a, double b, double c){
         double p = (a + b + c) / 2;
