@@ -6,9 +6,9 @@ import java.util.Scanner;
 public class MaxAndMin {
     private static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-        int first_num = getNumber(sc,"Please enter an integer: ");
-        int second_num = getNumber(sc,"Please enter the next integer: ");
-        int third_num = getNumber(sc,"Please enter another next integer: ");
+        int first_num = getNumber("Please enter an integer: ");
+        int second_num = getNumber("Please enter the next integer: ");
+        int third_num = getNumber("Please enter another next integer: ");
         //sc.close();
 
         int max = (first_num > second_num) ? first_num : second_num;
@@ -21,14 +21,14 @@ public class MaxAndMin {
         System.out.println("The minimum number entered = " + min);
 
     }
-    static int getNumber(Scanner sc,String prompt) {
+    static int getNumber(String prompt) {
         System.out.print(prompt);
         try {
             return sc.nextInt();
         } catch (InputMismatchException e) {
             System.out.println("Invalid input. Please enter an integer.");
             sc.nextLine();
-            return getNumber(sc, prompt);
+            return getNumber(prompt);
         }
     }
 }
