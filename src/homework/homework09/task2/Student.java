@@ -75,18 +75,17 @@ class ToDo{
         studentsCollection.add(student4);
         studentsCollection.add(student5);
 
-        removeStudentAndAppCourse(studentsCollection);
+        removeStudentAndAppCourse(studentsCollection, 3);
 
         for (Student student : studentsCollection){
             System.out.println(student.toString());
         }
 
-        int course = getNumber(scanner,"Specify the course you are interested in: ");
+        int course = getNumber("Specify the course you are interested in: ");
 
         printStudents(studentsCollection,course);
     }
-    public static void removeStudentAndAppCourse(List<Student> students){
-        int c = 3;
+    public static void removeStudentAndAppCourse(List<Student> students, int c){
         var it = students.iterator();
         while (it.hasNext()){
             var el = it.next();
@@ -113,14 +112,14 @@ class ToDo{
             System.out.println("No one has been enrolled in the specified course number.");
         }
     }
-    static int getNumber(Scanner scanner, String prompt){
+    static int getNumber(String prompt){
         System.out.print(prompt);
         try {
             return scanner.nextInt();
         } catch (InputMismatchException e) {
             System.out.println("Invalid input. Please enter a valid number.");
             scanner.nextLine();
-            return getNumber(scanner, prompt);
+            return getNumber(prompt);
         }
     }
 }
