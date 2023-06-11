@@ -48,16 +48,20 @@ class ArrEmployee {
                 new SalariedEmployee("David","8484563", 1800),
                 new SalariedEmployee("Anna", "4412875", 1500),
         };
-        Arrays.sort(arrEmployee, new PaymentComparator());
-        for(Payment employee: arrEmployee){
-            if(employee instanceof ContractEmployee ce){
-                System.out.println("My ID is " + ce.federalTaxIdmember + ", my name is " + ce.employeeld +
-                        " and my salary is " + ce.calculatePay() + ".");
+        try {
+            Arrays.sort(arrEmployee, new PaymentComparator());
+            for (Payment employee : arrEmployee) {
+                if (employee instanceof ContractEmployee ce) {
+                    System.out.println("My ID is " + ce.federalTaxIdmember + ", my name is " + ce.employeeld +
+                            " and my salary is " + ce.calculatePay() + ".");
+                }
+                if (employee instanceof SalariedEmployee se) {
+                    System.out.println("My ID is " + se.socialSecurityNumber + ", my name is " + se.employeeld +
+                            " and my salary is " + se.calculatePay() + ".");
+                }
             }
-            if(employee instanceof  SalariedEmployee se){
-                System.out.println("My ID is " + se.socialSecurityNumber + ", my name is " + se.employeeld+
-                        " and my salary is " + se.calculatePay() + ".");
-            }
+        } catch (ClassCastException e) {
+            System.out.println("An error occurred while sorting the array: " + e.getMessage());
         }
     }
 }

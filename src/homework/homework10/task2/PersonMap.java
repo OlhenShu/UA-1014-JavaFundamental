@@ -19,9 +19,14 @@ public class PersonMap {
 
         printAll(personMap);
         System.out.println("Enter the name you want to remove:");
-        String dellName = sc.nextLine();
-        if (personMap.containsKey(dellName)) {
-            personMap.remove(dellName);
+        try {
+            String dellName = sc.nextLine();
+            if (personMap.containsKey(dellName)) {
+                personMap.remove(dellName);
+            }
+        } catch (NoSuchElementException | IllegalStateException e) {
+            System.out.println("An error occurred while reading user input.");
+            e.printStackTrace();
         }
         printAll(personMap);
     }

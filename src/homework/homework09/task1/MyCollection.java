@@ -1,9 +1,6 @@
 package homework.homework09.task1;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class MyCollection {
     public static void main(String[] args){
@@ -30,16 +27,19 @@ public class MyCollection {
         minNextRemove(myCollection);
     }
     public static void swapMaxAndMin(List<Integer> myCollection){
-
-        int min = Collections.min(myCollection);
-        int max = Collections.max(myCollection);
-        int indexMin = myCollection.indexOf(min);
-        int indexMax = myCollection.indexOf(max);
-        System.out.println("Collection: " + myCollection + ", max = " + max + ", indexMax = " + indexMax +
-                ", min = " + min + ", indexMin = " + indexMin);
-        myCollection.set(indexMin, max);
-        myCollection.set(indexMax, min);
-        System.out.println(myCollection);
+        try {
+            int min = Collections.min(myCollection);
+            int max = Collections.max(myCollection);
+            int indexMin = myCollection.indexOf(min);
+            int indexMax = myCollection.indexOf(max);
+            System.out.println("Collection: " + myCollection + ", max = " + max + ", indexMax = " + indexMax +
+                    ", min = " + min + ", indexMin = " + indexMin);
+            myCollection.set(indexMin, max);
+            myCollection.set(indexMax, min);
+            System.out.println(myCollection);
+        }catch (NoSuchElementException e) {
+            System.out.println("The collection is empty. Unable to swap max and min elements.");
+        }
     }
 
 

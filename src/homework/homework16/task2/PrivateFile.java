@@ -22,9 +22,7 @@ public class PrivateFile {
                 Files.writeString(nFile.toPath(), "\n"+line, StandardOpenOption.APPEND);
             }
         } catch (IOException e) {
+            System.out.println("Something went wrong.");
         }
-
-
-
     }
 }

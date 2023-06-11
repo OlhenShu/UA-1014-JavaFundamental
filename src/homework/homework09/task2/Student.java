@@ -1,9 +1,6 @@
 package homework.homework09.task2;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Student {
     private String name;
@@ -118,6 +115,12 @@ class ToDo{
     }
     static int getNumber(Scanner scanner, String prompt){
         System.out.print(prompt);
-        return scanner.nextInt();
+        try {
+            return scanner.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input. Please enter a valid number.");
+            scanner.nextLine();
+            return getNumber(scanner, prompt);
+        }
     }
 }

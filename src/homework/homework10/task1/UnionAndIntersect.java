@@ -46,8 +46,13 @@ public class UnionAndIntersect {
     }
 
     public static Set<Integer> addNumbers(Set<Integer> numbers, int size){
-        for (int i = 0; i < size; i++){
-            numbers.add((int)(Math.random() * 11));
+        try {
+            for (int i = 0; i < size; i++) {
+                numbers.add((int) (Math.random() * 11));
+            }
+        } catch (ArithmeticException e) {
+            System.out.println("An arithmetic error occurred while generating random numbers.");
+            e.printStackTrace();
         }
         return numbers;
     }
