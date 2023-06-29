@@ -132,7 +132,6 @@ public class Maze {
             }
         }
     }
-
     static Boolean checkExit(Maze maze) {
         int trueWalkway = maze.node.getTrueWalkway();
         for (int i = 0; i < (maze.finalNode.size()); i++){
@@ -143,7 +142,6 @@ public class Maze {
         }
         return false;
     }
-
     static Boolean haveWays(Maze maze, int n, int numberWays){
         int trueWalkway = maze.node.getTrueWalkway();
         List<Integer> ways = new ArrayList<>();
